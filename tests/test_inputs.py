@@ -1,4 +1,3 @@
-import time
 
 import pytest
 import time
@@ -14,10 +13,7 @@ from pages.inputs_page import InputsPage
 def test_numeric_values_input(browser, value):
     page = InputsPage(browser, BASE_URL)
     page.open(page.PATH)
-
     page.type_text(value)
-    # иначе не видно, что значение ввелось
-    time.sleep(0.3)
     assert page.value() == value
 
 
